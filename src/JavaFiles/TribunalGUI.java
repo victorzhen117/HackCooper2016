@@ -1,3 +1,4 @@
+package JavaFiles;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,7 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
-public class Test extends Application{
+public class TribunalGUI extends Application{
 	
 	Hyperlink hyperLink;
 	Label category;

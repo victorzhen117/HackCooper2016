@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package json;
+package JavaFiles;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.core.JsonFactory;
@@ -19,8 +20,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Map;
-import report.Report;
-import user.User;
 
 /**
  *

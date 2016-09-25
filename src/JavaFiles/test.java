@@ -3,14 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
+package JavaFiles;
 import java.io.IOException;
 import java.util.ArrayList;
-import report.Report;
-import twitter.api.TwitterAPI;
-import user.User;
-import json.JsonSave;
-import static json.JsonSave.saveData;
+import static JavaFiles.JsonSave.saveData;
 
 /**
  *
