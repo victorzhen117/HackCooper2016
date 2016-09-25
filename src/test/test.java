@@ -4,8 +4,13 @@
  * and open the template in the editor.
  */
 package test;
+import java.io.IOException;
+import java.util.ArrayList;
 import report.Report;
 import twitter.api.TwitterAPI;
+import user.User;
+import json.JsonSave;
+import static json.JsonSave.saveData;
 
 /**
  *
@@ -14,17 +19,31 @@ import twitter.api.TwitterAPI;
 public class test {
     public static void main(String[] args){
         TwitterAPI twitterAPI = new TwitterAPI();
-        Report report = new Report();
-    report.incrementScore();
-        report.incrementScore();
-        report.incrementTimesChecked();
-        report = twitterAPI.getTweet(report, "slut");
+        ArrayList<Report> aReport= new ArrayList();
+        Report report1 = new Report();
+        Report report2 = new Report();
+        aReport.add(report1);
+        aReport.add(report2);
+        User user = new User();
         
-        System.out.println("Score: " + report.getScore());
-        System.out.println("Times checked: " +report.getTimesChecked());
-        System.out.println("Tweet: "+report.getTweet());
-        System.out.println("User: "+report.getUserID());
-        System.out.println("Tweet ID: "+report.getTweetID());
+        
+        report1.incrementScore();
+        report1.incrementScore();
+        report1.incrementTimesChecked();
+        report1 = twitterAPI.getTweet(report1, "slut");
+        report2 = twitterAPI.getTweet(report2, "harambe");
+        user.setUser(report1.getUserID());
+        try{
+            saveData(aReport, user);
+        }
+        catch(IOException ie){
+            ie.printStackTrace();
+        }
+        System.out.println("Score: " + report1.getScore());
+        System.out.println("Times checked: " +report1.getTimesChecked());
+        System.out.println("Tweet: "+report1.getTweet());
+        System.out.println("User: "+report1.getUserID());
+        System.out.println("Tweet ID: "+report1.getTweetID());
         
     }
 }
