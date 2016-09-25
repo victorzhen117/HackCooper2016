@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package report;
+package JavaFiles;
 
-import twitter.api.TwitterAPI;
 import twitter4j.User;
 
 /**

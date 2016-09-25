@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package user;
+package JavaFiles;
 
-import Badge.Badge;
+import JavaFiles.Badge;
 
 /**
  *
