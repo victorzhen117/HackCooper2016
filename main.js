@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
 
-  <p>Click the button to display an alert box. And we made changes2</p>
 
-  <button onclick="myFunction()">Try it</button>
-	<script type = "text/javascript" src = "data.js"></script>
-  <script type = "text/javascript">
-    var score = 0;
+var score = 0;
     var timesChecked = 0;
     var tweet = "";
     var user_id = "";
@@ -49,7 +40,7 @@
 		category = {};
 	}
     var r1 = {"score": 0, "timesChecked":0, "tweet":"", "user_id":"", "tweet_id":""};
-    var yesElement = document.getElementById("yes");
+    yesElement = document.getElementById("yes");
 	if(!yesElement){
 		yesElement = {};
 	}
@@ -97,15 +88,12 @@
 	  console.log(data.reports[0].tweet);
     }
 	
-	console.log("this is before the parse function call");
 	
-	parse();
-	console.log("This is after the parse function call");
+	
+	//parse();
+	element.innerHTML = data.reports[0].tweet;
 	/*
     var rr = {score:0, timesChecked:5, tweet:"haha banana", user_id:"101010", tweet_id:"1010101010"};
     alert(rr.score);
 	*/
 	
-  </script>
-  </body>
-</html>

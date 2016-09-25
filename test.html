@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+
+  <p>Click the button to display an alert box.</p>
+
+  <button onclick="myFunction()">Try it</button>
+
+  <script>
+    var score = 0;
+      var timesChecked = 0;
+      var tweet = "";
+      var user_id = "";
+      var tweet_id = "";
+      var report = {score: score, timesChecked: timesChecked, tweet: tweet, user_id: user_id, tweet_id: tweet_id};
+      var name = "";
+      var daysGood = 0;
+      var user = {name: name, daysGood: daysGood};
+      var users = [];
+      var reports = [];
+      //getters and setters
+      function incrementScore(){
+          score++;
+      }
+      function incrementTimesChecked(){
+          timesChecked++;
+      }
+      function loadReports(user_id){
+          for(var i = 0; i < reports.length; i++){
+              if(tweet_id == reports[i].user_id){
+                  return reports[i];
+              }
+          }
+          return null;
+      }
+      function incrementDaysGood(){
+          daysGood++;
+      }
+      var rr = {score:0, timesChecked:5, tweet:"haha banana", user_id:"101010", tweet_id:"1010101010"};
+      function myFunction(){
+		alert(rr.score);
+		}
+  </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+data = {
+"reports":
+	[ 
+		{
+			"score" : 0,
+			"timesChecked" : 0,
+			"tweet" : "RT @DeeOneAyekooto: Ben Bruce, if you're afraid of investing in Nigeria because of Anticorruption war, go to Jamaica or Columbia or Banana!…",
+			"userID" : "Banky",
+			"tweetID" : 780029916154912768
+		} 
+	] 
+};

@@ -17,6 +17,10 @@ public class User {
     public Badge badge[];
     public Badge viewBadge;
     
+    public User(){
+        user = "";
+        daysGood = 0;
+    }
     public void setUser(String user){
         this.user = user;
     }
