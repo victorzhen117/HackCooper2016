@@ -5,7 +5,7 @@
     
     
     
-    
+
     
     
     
@@ -452,19 +452,30 @@ a,
   border-color: #BFE0EC;
 }
 .button{
-	background-color: #4CAF50;
+	background-color: #4099FF;
 }
 .decision{
-	padding: 32px 16px;
+	padding: 15px 10px;
+    color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+div.newline{
+    padding: 15px;
 }
 div.tribunal {
 	text-align: left;
 	padding: 20px;
-	font-size: 20pt;
+	font-size: 18pt;
+    color: black;
+    
 }
 div.tribunalBorder{
 	font-size: 12pt;
-	border: 1px solid black;
+	border: 2px solid black;
+    padding: 10px;
 }
 input:focus,
 textarea:focus,
@@ -1611,13 +1622,19 @@ s,
     <div class="stream-end">
   <div class="stream-end-inner">
 		<!<img src = "harambelove.jpg">
-		<div class = "tribunal">Category
+		<div class = "tribunal"><p id = "hi">Category</p>
+			<div class = "newline"></div>
 			<div class = "tribunalBorder"> Harrasment </div>
+			<div class = "newline"></div>
+			<h3></h3>
 			John Doe
-			<div class = "tribunalBorder"> Harambe didn't die for this </div>
-			<button class = "button decision">yes</button>
-			<button class = "button decision">no</button>
-			<button class = "button decision">perhaps</button>
+			<div class = "newline"></div>
+			<div id = "ChangeText" class = "tribunalBorder"> Harambe didn't die for this </div>
+			<div class = "newline"></div>
+			<button id = "yes" class = "button decision">Offensive</button>
+			<button id = "no" class = "button decision">Not offensive</button>
+			<button id = "perhaps" class = "button decision">Unsure</button>
+			
 		</div>
 		
           <p><button type="button" class="btn-link back-to-top hidden">Back to top ↑</button></p>
@@ -5319,4 +5336,4 @@ s,
 
   
 
-<div id="sr-event-log" class="visuallyhidden" aria-live="assertive"></div></body></html>
+<div id="sr-event-log" class="visuallyhidden" aria-live="assertive"></div>    <script src = "scripts/main.js"></script></body></html>
