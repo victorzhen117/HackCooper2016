@@ -6,6 +6,7 @@
 package twitter.api;
 
 import java.util.List;
+import report.Report;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 
@@ -18,30 +19,35 @@ public class TwitterAPI {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        System.out.println(getTweet());
-    }
-    public static String getTweet(){
-        ConfigurationBuilder cb = new ConfigurationBuilder();
+        private ConfigurationBuilder cb;
+        private TwitterFactory tf;
+        private Twitter twitter;
+    public TwitterAPI(){
+        cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
         .setOAuthConsumerKey("53nUEtaL8hsyBS7HyCLZsdj5O")
         .setOAuthConsumerSecret("5ZJ8TeXWj7zHOhK1OtvqxmjD0dIrHUjmtZ7rLOYc9cK0ovDcTF")
         .setOAuthAccessToken("576227678-tDF0uPGF3bjCAFgB7CVRcAXCLWSm7pc7dgEzLVea")
         .setOAuthAccessTokenSecret("LKHdmnEhlTPXkgZrI0jYejrOkhtcJTvf7Gz3kIBCeoFu7");
-
-        TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter = tf.getInstance();   
-        String tweet = "";
+        
+        tf = new TwitterFactory(cb.build());
+        twitter = tf.getInstance();   
+    }
+    public Report getTweet(Report report, String keyword){  
+        
         try{
-            Query query = new Query("slut");
+            Query query = new Query(keyword);
             QueryResult result = twitter.search(query);
+            
             for (Status status : result.getTweets()) {
-                tweet = status.getText() + " " + status.getCreatedAt().toString();
+                report.setTweet(status.getText()); 
+                report.setTweetID(status.getId());
+                report.setUserID(status.getUser().getName());
             }
         }
         catch (TwitterException te){
             te.printStackTrace();
         }
-        return tweet;
+        return report;
     }
 }
