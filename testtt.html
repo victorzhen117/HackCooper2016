@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<head>
+</head>
+<body>
+    <script>
+    var score = 0;
+    var timesChecked = 0;
+    var tweet = "";
+    var user_id = "";
+    var tweet_id = "";
+    var report = {score: score, timesChecked: timesChecked, tweet: tweet, user_id: user_id, tweet_id: tweet_id};
+    var name = "";
+    var daysGood = 0;
+    var user = {name: name, daysGood: daysGood};
+    var users = [];
+    var reports = [];
+    //getters and setters
+
+    function incrementScore(){
+        score++;
+    }
+
+    function incrementTimesChecked(){
+        timesChecked++;
+    }
+
+    function loadReports(user_id){
+        for(var i = 0; i < reports.length; i++){
+            if(tweet_id == reports[i].user_id){
+                return reports[i];
+            }
+        }
+        return null;
+    }
+
+    function incrementDaysGood(){
+        daysGood++;
+    }
+
+    var rr = {0, 5, "haha banana", "101010", "1010101010"}
+    window.alert(rr.tweet);
+
+    </script>
+</body>
