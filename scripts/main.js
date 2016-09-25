@@ -4,7 +4,7 @@ document.getElementById("unsure").onclick = unsure;
 var element = document.getElementById("ChangeText");
 var category = document.getElementById("category");
 category.innerHTML = "Harassment";
-<! (don't need to change this) element.innerHTML = "Cincinatti Zoo"; 
+<! (dont need to change this) element.innerHTML = "Cincinatti Zoo"; 
 function yes(){
 	element.innerHTML = "Thanks for submitting your response, the poster will be dealt with accordingly."
 	alert("user pressed yes");
