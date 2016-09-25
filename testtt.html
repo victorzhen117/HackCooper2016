@@ -10,46 +10,6 @@
 
   <script>
     var score = 0;
-      var timesChecked = 0;
-      var tweet = "";
-      var user_id = "";
-      var tweet_id = "";
-      var report = {score: score, timesChecked: timesChecked, tweet: tweet, user_id: user_id, tweet_id: tweet_id};
-      var name = "";
-      var daysGood = 0;
-      var user = {name: name, daysGood: daysGood};
-      var users = [];
-      var reports = [];
-      //getters and setters
-      function incrementScore(){
-          score++;
-      }
-      function incrementTimesChecked(){
-          timesChecked++;
-      }
-      function loadReports(user_id){
-          for(var i = 0; i < reports.length; i++){
-              if(tweet_id == reports[i].user_id){
-                  return reports[i];
-              }
-          }
-          return null;
-      }
-      function incrementDaysGood(){
-          daysGood++;
-      }
-      var rr = {score:0, timesChecked:5, tweet:"haha banana", user_id:"101010", tweet_id:"1010101010"};
-      alert(rr.score);
-  </script>
-  </body>
-</html>
-=======
-<!DOCTYPE HTML>
-<head>
-</head>
-<body>
-    <script>
-    var score = 0;
     var timesChecked = 0;
     var tweet = "";
     var user_id = "";
@@ -60,16 +20,15 @@
     var user = {name: name, daysGood: daysGood};
     var users = [];
     var reports = [];
+    var reportCounter = 0;
+    var userCounter = 0;
     //getters and setters
-
     function incrementScore(){
         score++;
     }
-
     function incrementTimesChecked(){
         timesChecked++;
     }
-
     function loadReports(user_id){
         for(var i = 0; i < reports.length; i++){
             if(tweet_id == reports[i].user_id){
@@ -78,13 +37,52 @@
         }
         return null;
     }
-
     function incrementDaysGood(){
         daysGood++;
     }
 
-    var rr = {0, 5, "haha banana", "101010", "1010101010"}
-    window.alert(rr.tweet);
+    document.getElementById("yes").onclick = yes;
+    document.getElementById("no").onclick = no;
+    document.getElementById("unsure").onclick = unsure;
+    var element = document.getElementById("ChangeText");
+    var category = document.getElementById("category");
+    category.innerHTML = "Harassment";
+    <! (dont need to change this) element.innerHTML = "Cincinatti Zoo";
+    var r1 = {score: 0, timesChecked:0, tweet="", user_id:"", tweet_id=""};
+    function yes(){
+    	element.innerHTML = "Thanks for submitting your response, the poster will be dealt with accordingly."
+    	alert("user pressed yes");
+      r1.score++;
+      r1.timesChecked++;
+        <! need to increment score by 1
+        <! need to increment timesChecked
+        <! need to check if timesChecked = 5
+    }
+    function no(){
+    	element.innerHTML = "Thanks for submitting your response, the poster will be dealt with accordingly."
+    	alert("user pressed no");
+        <! need to increment timesChecked
+        <! need to check if timesChecked = 5
+    }
+    function unsure(){
+    	element.innerHTML = "You aren't very helpful but thanks for trying :)"
+    	alert("user pressed perhaps");
+        <! need to increment score by 0.5
+        <! need to increment timesChecked
+        <! need to check if timesChecked = 5
+    }
 
-    </script>
-</body>
+    function parsee(x){
+      var obj = JSON.parse(x);
+      var new_report = {score: obj.score, timesChecked: obj.timesChecked,
+      tweet: obj.tweet, user_id: obj.user_id, tweet_id: obj.tweet_id};
+      reports[reportCounter++] = new_report;
+
+      // this is stuff.
+    }
+
+    var rr = {score:0, timesChecked:5, tweet:"haha banana", user_id:"101010", tweet_id:"1010101010"};
+    alert(rr.score);
+  </script>
+  </body>
+</html>
